@@ -16,7 +16,9 @@ namespace mvc_test.Models    // A namespace is designed for providing a way to k
         public string apellido { get; set; }    
         [Required]    
         public string documento { get; set; }    
-        [Required]    
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString="{yyyy-MM-dd}")]    
         public DateTime fecha_nacimiento { get; set; }    
     }    
 }  

@@ -41,25 +41,114 @@ namespace mvc_test.Models
             return lstemployee;    
         }    
     
-        //To Add new employee record      
-        public void AddEmployee(Employee employee)    
+        public IEnumerable<Clientes> GetAllClientes()    
+        {    
+            List<Clientes> lstClientes = new List<Clientes>();    
+    
+            using (SqlConnection con = new SqlConnection(connectionString))    
+            {    
+                SqlCommand cmd = new SqlCommand("spGetAllEmployees", con);    
+                cmd.CommandType = CommandType.StoredProcedure;    
+    
+                con.Open();    
+                SqlDataReader rdr = cmd.ExecuteReader();    
+    
+                while (rdr.Read())    
+                {    
+                    Clientes cliente = new Clientes();    
+    
+                    cliente.ID = Convert.ToInt32(rdr["EmployeeID"]);    
+                    cliente.nombre = rdr["nombre"].ToString();    
+                    cliente.apellido = rdr["apellido"].ToString();    
+                    cliente.documento = rdr["documento"].ToString();    
+                    cliente.fecha_nacimiento = DateTime.Parse(rdr["fecha_nacimiento"].ToString());    
+    
+                    lstClientes.Add(cliente);    
+                }    
+                con.Close();    
+            }    
+            return lstClientes;    
+        }
+            
+        
+        public void AddClientes(Clientes clientes)    
         {    
             using (SqlConnection con = new SqlConnection(connectionString))    
             {    
-                SqlCommand cmd = new SqlCommand("spAddEmployee", con);    
+                SqlCommand cmd = new SqlCommand("spAddClientes", con);    
                 cmd.CommandType = CommandType.StoredProcedure;    
     
-                cmd.Parameters.AddWithValue("@Name", employee.Name);    
-                cmd.Parameters.AddWithValue("@Gender", employee.Gender);    
-                cmd.Parameters.AddWithValue("@Department", employee.Department);    
-                cmd.Parameters.AddWithValue("@City", employee.City);    
+                cmd.Parameters.AddWithValue("@nombre", clientes.nombre);    
+                cmd.Parameters.AddWithValue("@apellido", clientes.apellido);    
+                cmd.Parameters.AddWithValue("@documento", clientes.documento);    
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", clientes.fecha_nacimiento);    
+    
+                con.Open();    
+                cmd.ExecuteNonQuery();    
+                con.Close();    
+            }    
+        }
+        
+        public void UpdateClientes(Clientes clientes)    
+        {    
+            using (SqlConnection con = new SqlConnection(connectionString))    
+            {    
+                SqlCommand cmd = new SqlCommand("spUpdateCliente", con);    
+                cmd.CommandType = CommandType.StoredProcedure;    
+    
+                cmd.Parameters.AddWithValue("@nombre", clientes.nombre);    
+                cmd.Parameters.AddWithValue("@apellido", clientes.apellido);    
+                cmd.Parameters.AddWithValue("@documento", clientes.documento);    
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", clientes.fecha_nacimiento);    
+    
+                con.Open();    
+                cmd.ExecuteNonQuery();    
+                con.Close();    
+            }    
+        }
+
+        public Clientes GetClientData(int? id)    
+        {    
+            Clientes Cliente = new Clientes();    
+    
+            using (SqlConnection con = new SqlConnection(connectionString))    
+            {    
+                string sqlQuery = "SELECT * FROM Cliente WHERE ID= " + id;    
+                SqlCommand cmd = new SqlCommand(sqlQuery, con);    
+    
+                con.Open();    
+                SqlDataReader rdr = cmd.ExecuteReader();    
+    
+                while (rdr.Read())    
+                {    
+                    Cliente.ID = Convert.ToInt32(rdr["ID"]);    
+                    Cliente.nombre = rdr["nombre"].ToString();    
+                    Cliente.apellido = rdr["apellido"].ToString();    
+                    Cliente.fecha_nacimiento = DateTime.Parse(rdr["fecha_nacimiento"].ToString());    
+                    
+                }    
+            }    
+            return Cliente;    
+        }    
+        
+        //To Delete the record on a particular employee    
+        public void DeleteCliente(int? id)    
+        {    
+    
+            using (SqlConnection con = new SqlConnection(connectionString))    
+            {    
+                SqlCommand cmd = new SqlCommand("spDeleteCliente", con);    
+                cmd.CommandType = CommandType.StoredProcedure;    
+    
+                cmd.Parameters.AddWithValue("@ID", id);    
     
                 con.Open();    
                 cmd.ExecuteNonQuery();    
                 con.Close();    
             }    
         }    
-    
+        
+        #region  Employee
         //To Update the records of a particluar employee    
         public void UpdateEmployee(Employee employee)    
         {    
@@ -78,8 +167,8 @@ namespace mvc_test.Models
                 cmd.ExecuteNonQuery();    
                 con.Close();    
             }    
-        }    
-    
+        }
+
         //Get the details of a particular employee    
         public Employee GetEmployeeData(int? id)    
         {    
@@ -120,6 +209,26 @@ namespace mvc_test.Models
                 cmd.ExecuteNonQuery();    
                 con.Close();    
             }    
-        }    
+        } 
+
+        //To Add new employee record      
+        public void AddEmployee(Employee employee)    
+        {    
+            using (SqlConnection con = new SqlConnection(connectionString))    
+            {    
+                SqlCommand cmd = new SqlCommand("spAddEmployee", con);    
+                cmd.CommandType = CommandType.StoredProcedure;    
+    
+                cmd.Parameters.AddWithValue("@Name", employee.Name);    
+                cmd.Parameters.AddWithValue("@Gender", employee.Gender);    
+                cmd.Parameters.AddWithValue("@Department", employee.Department);    
+                cmd.Parameters.AddWithValue("@City", employee.City);    
+    
+                con.Open();    
+                cmd.ExecuteNonQuery();    
+                con.Close();    
+            }    
+        }   
+        #endregion
     }    
 }    

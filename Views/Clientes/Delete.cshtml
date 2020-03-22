@@ -1,0 +1,31 @@
+@model mvc_test.Models.Clientes    
+    
+@{    
+    ViewData["Title"] = "Eliminar";    
+}    
+<h2>Eliminar cliente</h2>    
+<h3>Are you sure you want to delete this?</h3>    
+<div>    
+    <h4>Clientes</h4>    
+    <hr />    
+    <dl class="dl-horizontal">    
+        <dt>    
+            @Html.DisplayNameFor(model => model.nombre)    
+        </dt>    
+        <dd>    
+            @Html.DisplayFor(model => model.apellido)    
+        </dd>    
+        <dt>    
+            @Html.DisplayNameFor(model => model.documento)    
+        </dt>    
+        <dd>    
+            @Html.DisplayFor(model => model.fecha_nacimiento)    
+        </dd>    
+    </dl>    
+    
+    <form asp-action="Delete">    
+        <input type="hidden" asp-for="ID" />    
+        <input type="submit" value="Delete" class="btn btn-default" /> |    
+        <a asp-action="Index">Back to List</a>    
+    </form>    
+</div>  
