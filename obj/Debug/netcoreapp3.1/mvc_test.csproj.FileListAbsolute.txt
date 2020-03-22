@@ -46,3 +46,8 @@ C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\staticwebassets\mvc_test.StaticWe
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.dll
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.pdb
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.genruntimeconfig.cache
+C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Create.cshtml.g.cs
+C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Delete.cshtml.g.cs
+C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Detail.cshtml.g.cs
+C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs
+C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Index.cshtml.g.cs
