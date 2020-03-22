@@ -57,7 +57,7 @@ namespace mvc_test.Models
                 {    
                     Clientes cliente = new Clientes();    
     
-                    cliente.ID = Convert.ToInt32(rdr["EmployeeID"]);    
+                    cliente.ID = Convert.ToInt32(rdr["ID"]);    
                     cliente.nombre = rdr["nombre"].ToString();    
                     cliente.apellido = rdr["apellido"].ToString();    
                     cliente.documento = rdr["documento"].ToString();    
@@ -113,7 +113,7 @@ namespace mvc_test.Models
     
             using (SqlConnection con = new SqlConnection(connectionString))    
             {    
-                string sqlQuery = "SELECT * FROM Cliente WHERE ID= " + id;    
+                string sqlQuery = "SELECT * FROM Clientes WHERE ID= " + id;    
                 SqlCommand cmd = new SqlCommand(sqlQuery, con);    
     
                 con.Open();    

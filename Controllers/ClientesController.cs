@@ -8,7 +8,7 @@ using mvc_test.Models;
   
 namespace mvc_test.Controllers  
 {  
-    public class ClientController : Controller  
+    public class ClientesController : Controller  
     {  
         EmployeeDataAccessLayer dataAccess = new EmployeeDataAccessLayer();  
     
@@ -77,7 +77,7 @@ namespace mvc_test.Controllers
      
         #region Details()
         [HttpGet]  
-        public IActionResult Details(int? id)  
+        public IActionResult Detail(int? id)  
         {  
             if (id == null)  
             {  

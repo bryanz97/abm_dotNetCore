@@ -39,11 +39,11 @@
                     @Html.DisplayFor(modelItem => item.documento)    
                 </td>    
                 <td>    
-                    @Html.DisplayFor(modelItem => item.fecha_nacimiento)    
+                    @Html.EditorFor(modelItem => item.fecha_nacimiento)    
                 </td>    
                 <td>    
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |    
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |    
+                    <a asp-action="Detail" asp-route-id="@item.ID">Detail</a> |    
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>    
                 </td>    
             </tr>    
