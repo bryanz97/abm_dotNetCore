@@ -1,0 +1,22 @@
+using System;    
+using System.Collections.Generic;    
+using System.ComponentModel.DataAnnotations;    // read about what this library can be used for
+using System.Linq;    
+using System.Threading.Tasks;    
+    
+namespace mvc_test.Models    // A namespace is designed for providing a way to keep one set of names separate from another.
+{    
+    public class Employee    // employee class created in the models folder
+    {    
+        // here we set the get set methods for every variable that will be used as parameter in our database procedures
+        public int ID { get; set; }    
+        [Required]    
+        public string Name { get; set; }    
+        [Required]    
+        public string Gender { get; set; }    
+        [Required]    
+        public string Department { get; set; }    
+        [Required]    
+        public string City { get; set; }    
+    }    
+}  
