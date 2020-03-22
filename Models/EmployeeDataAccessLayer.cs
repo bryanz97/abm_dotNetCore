@@ -9,7 +9,7 @@ namespace mvc_test.Models
 {    
     public class EmployeeDataAccessLayer     
     {    
-        string connectionString = "Data Source=DESKTOP-DPPC2T9;Database=OdinBD;Integrated Security=TRUE";    
+        string connectionString = "Data Source=DESKTOP-DPPC2T9;Database=master;Integrated Security=TRUE";    
     
         //To View all employees details      
         public IEnumerable<Employee> GetAllEmployees()    
