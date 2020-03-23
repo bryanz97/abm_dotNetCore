@@ -12,10 +12,22 @@
             @Html.DisplayNameFor(model => model.nombre)    
         </dt>    
         <dd>    
+            @Html.DisplayFor(model => model.nombre)    
+        </dd>
+        <dt>    
+            @Html.DisplayNameFor(model => model.apellido)    
+        </dt>    
+        <dd>    
             @Html.DisplayFor(model => model.apellido)    
-        </dd>    
+        </dd>
         <dt>    
             @Html.DisplayNameFor(model => model.documento)    
+        </dt>    
+        <dd>    
+            @Html.DisplayFor(model => model.documento)    
+        </dd>    
+        <dt>    
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)    
         </dt>    
         <dd>    
             @Html.EditorFor(model => model.fecha_nacimiento)    

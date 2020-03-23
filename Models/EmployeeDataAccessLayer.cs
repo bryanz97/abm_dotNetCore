@@ -95,9 +95,10 @@ namespace mvc_test.Models
             {    
                 SqlCommand cmd = new SqlCommand("spUpdateCliente", con);    
                 cmd.CommandType = CommandType.StoredProcedure;    
-    
-                cmd.Parameters.AddWithValue("@nombre", clientes.nombre);    
-                cmd.Parameters.AddWithValue("@apellido", clientes.apellido);    
+
+                cmd.Parameters.AddWithValue("@ClieId", clientes.ID);        
+                cmd.Parameters.AddWithValue("@Nombre", clientes.nombre);    
+                cmd.Parameters.AddWithValue("@Apellido", clientes.apellido);    
                 cmd.Parameters.AddWithValue("@documento", clientes.documento);    
                 cmd.Parameters.AddWithValue("@fecha_nacimiento", clientes.fecha_nacimiento);    
     
@@ -123,7 +124,8 @@ namespace mvc_test.Models
                 {    
                     Cliente.ID = Convert.ToInt32(rdr["ID"]);    
                     Cliente.nombre = rdr["nombre"].ToString();    
-                    Cliente.apellido = rdr["apellido"].ToString();    
+                    Cliente.apellido = rdr["apellido"].ToString();
+                    Cliente.documento = rdr["documento"].ToString();     
                     Cliente.fecha_nacimiento = DateTime.Parse(rdr["fecha_nacimiento"].ToString());    
                     
                 }    
@@ -140,7 +142,7 @@ namespace mvc_test.Models
                 SqlCommand cmd = new SqlCommand("spDeleteCliente", con);    
                 cmd.CommandType = CommandType.StoredProcedure;    
     
-                cmd.Parameters.AddWithValue("@ID", id);    
+                cmd.Parameters.AddWithValue("@ClieId", id);    
     
                 con.Open();    
                 cmd.ExecuteNonQuery();    
