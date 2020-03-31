@@ -25,11 +25,6 @@ C:\Users\User\mvc_test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Sy
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.TagHelpers.input.cache
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.TagHelpers.output.cache
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\mvc_test.RazorCoreGenerate.cache
-C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Create.cshtml.g.cs
-C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Delete.cshtml.g.cs
-C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Detail.cshtml.g.cs
-C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Edit.cshtml.g.cs
-C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Index.cshtml.g.cs
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\User\mvc_test\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
