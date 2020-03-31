@@ -456,22 +456,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\User\\mvc_test\\mvc_test.csproj",
+      "projectUniqueName": "C:\\Users\\User\\mvc_test\\mvc_test.csproj",
       "projectName": "mvc_test",
-      "projectPath": "c:\\Users\\User\\mvc_test\\mvc_test.csproj",
+      "projectPath": "C:\\Users\\User\\mvc_test\\mvc_test.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\User\\mvc_test\\obj\\",
+      "outputPath": "C:\\Users\\User\\mvc_test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
